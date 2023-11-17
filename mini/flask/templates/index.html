@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Machine Learning Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        div {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+
+        form {
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="number"], select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        p#prediction-result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Machine Learning Prediction</h1>
+    <div>
+        <form method="POST" action="/predict">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" placeholder="Enter your Age"><br>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="" disabled selected>Choose an option</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select><br>
+
+
+            <label for="yummy">Is it yummy?</label>
+            <select id="yummy" name="yummy">
+                <option value="" disabled selected>Choose an option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select><br><br>
+
+
+             <label for="convenient">Is it convenient?</label>
+        <select id="convenient">
+            <option value="" disabled selected>Choose an option</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br><br>
+
+        <label for="spicy">Is it spicy?</label>
+        <select id="spicy">
+            <option value="" disabled selected>Choose an option</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br><br>
+
+        <label for="fattening">Is it fattening?</label>
+        <select id="fattening">
+            <option value="" disabled selected>Choose an option</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br><br>
+
+        <label for="greasy">Is it greasy?</label>
+        <select id="greasy">
+            <option value="" disabled selected>Choose an option</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br><br>
+
+        <label for="fast">Is it fast?</label>
+        <select id="fast">
+            <option value="" disabled selected>Choose an option</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br><br>
+
+        <label for="cheap">Is it cheap?</label>
+        <select id="cheap">
+            <option value="" disabled selected>Choose an option</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br><br>
+
+        <label for="tasty">Is it tasty?</label>
+        <select id="tasty">
+            <option value="" disabled selected>Choose an option</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br><br>
+
+        <label for="expensive">Is it expensive?</label>
+        <select id="expensive">
+            <option value="" disabled selected>Choose an option</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br><br>
+
+          <label for="healthy">Is it healthy?</label>
+        <select id="healthy">
+            <option value="" disabled selected>Choose an option</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br><br>
+
+        <label for="disgusting">Is it disgusting?</label>
+        <select id="disgusting">
+            <option value="" disabled selected>Choose an option</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br><br>
+
+        <label for="visit_frequency">when are you visiting?</label>
+        <select id="visit_frequency">
+            <option value="" disabled selected>Choose an option</option>
+            <option value="every three months">every three months</option>
+            <option value="once a month">once a month</option>
+             <option value="once a week">once a week</option>
+            <option value="once a year">once a year</option>
+        </select><br><br>
+
+            
+
+            <button type="submit">Predict</button>
+        </form>
+
+        <p id="prediction-result">{{ prediction_result }}</p>
+    </div>
+</body>
+</html>
